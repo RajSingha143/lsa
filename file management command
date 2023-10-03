@@ -1,0 +1,10 @@
+File Management command.
+
+#Is : It is used to list the files and directories.
+#Is - 1 : It is used to long list the files and directories. 
+#Is - lh: It is used to long list the files and directories in human readable form.
+#1: 1 command is used to list hidden files.
+#Is - a: This command is used to list all files.
+#Is -alh: It is used to list all files with human readable form.
+#Is /tmp: This command used to list the files and directories in the /tmp directory.
+#Is -1 /tmp: It is used to long list the files and directories in the /tmp directory.
