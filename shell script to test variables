@@ -1,0 +1,11 @@
+# vi test
+#!/bin/bash
+#testing variables
+days=10
+guest="Katie"
+echo "$guest checked in $days days ago"
+days=7
+guest="Jessica"
+echo "$guest checked in $days days ago"
+# chmod 777 test
+# bash test
