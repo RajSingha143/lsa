@@ -1,0 +1,8 @@
+# vi test4
+#!/bin/bash
+#assigning a variable value to another variable
+value1=10
+value2=$value1
+echo The resulting value is $value2
+# chmod 777 test4
+# ./test4
