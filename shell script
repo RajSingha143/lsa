@@ -1,0 +1,626 @@
+7)Write a shell script to use the brackets.
+# vi test7
+#!/bin/bash
+var1=100
+var2=50
+var3=45
+var4=$[ $var1 * ( $var2 - $var3 ) ]
+echo The final Result is $var4
+# chmod 777 test7
+# bash test7
+Output:
+The final Result is 500
+
+
+
+8) use the bash calculator.
+[root@fycs ~]# bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'.
+10/3
+3
+scale=2
+10/3
+3.33
+scale=4
+10/3
+3.3333
+quit
+
+
+
+
+9)Write a shell script for floating value calculation.
+# vi test8
+#!/bin/bash
+var1=`echo " scale=4; 3.44/5 " | bc `
+echo The answer is $var1
+# chmod 777 test8
+# ./test8
+Output:
+The answer is .6880
+
+
+
+
+
+10)Write a shell script to use if…else.
+# vi prog1
+#!/bin/bash
+echo Enter any number
+read n
+if test $n -gt 0
+then
+echo $n is positive
+else
+echo $n is negative
+fi
+# chmod 777 prog1
+# ./prog1
+Output:
+Enter any number
+13
+13 is positive
+
+
+
+11)Write a shell script for file comparison.
+# vi prog2
+#!/bin/bash
+echo Enter the file name
+read fname
+if [ -f $fname ]
+then
+echo Thye file exists
+else
+echo File with the name $fname does not exists
+fi
+# chmod 777 prog2
+# ./prog2
+Output:
+Enter the file name
+test7
+The file exists
+
+
+
+12)Write a shell script for string comparison.
+# vi prog3
+#!/bin/bash
+echo Enter two strings
+read s1 s2
+if [ $s1 = $s2 ]
+then
+echo The strings are identical
+else
+echo The strings are not identical
+fi
+# chmod 777 prog3
+# ./prog3
+output:
+Enter two strings
+football cricket
+The strings are not identical
+
+
+
+13)Write a shell script to check whether the file has write permission or not.
+# vi prog4
+#!/bin/bash
+echo Enter the file name
+read fname
+if [ -w $fname ]
+then
+echo Type text to append.To stop press Ctrl+D.
+cat >> $fname
+else
+echo The file has no write permission
+fi
+# chmod 777 prog4
+# ./prog4
+Output:
+Enter the file name
+test7
+Type text to append.To stop press Ctrl+D.
+the scripting
+[root@fycs ~]# cat test7
+#!/bin/bash
+var1=100
+var2=50
+var3=45
+var4=$[ $var1 * ( $var2 - $var3 ) ]
+echo The final Result is $var4
+the scripting
+
+
+
+
+
+
+14)Write a shell script for testing compound comparison(AND operator).
+vi program4
+#!/bin/bash
+if [ -d $HOME ] && [ -w $HOME/testing ]
+then
+echo "The File exists and you can write to it"
+else
+echo "I can't write to the file"
+fi
+# chmod 777 program4
+# bash program4
+Output:
+I can't write to the file
+
+
+
+
+15)Write a shell script for testing compound comparison(OR operator).
+vi program4
+#!/bin/bash
+if [ -d $HOME ] || [ -w $HOME/prog2 ]
+then
+echo "The File exists and you can write to it"
+else
+echo "I can't write to the file"
+fi
+#chmod 777 program4
+# bash program4
+Output:
+The File exists and you can write to it
+
+
+
+
+
+16)Write a shell script to use case commands to print week day names.
+#vi program1
+#!/bin/bash
+echo Enter day number
+read a
+case $a in
+1) echo Monday;;
+2) echo Tuesday;;
+3) echo Wednesday;;
+4) echo Thursday;;
+5) echo Friday;;
+6) echo Saturday;;
+7) echo Sunday;;
+*) echo Enter number between 1 to 7;
+esac
+#chmod u+x program1
+#bash program1
+output:
+Enter day number
+6
+Saturday
+
+
+
+
+
+17)Write a shell script to use case commands to print month names.
+#vi program2
+#!/bin/bash
+echo Enter month number
+read b
+case $b in
+1) echo Jan;;
+2) echo Feb;;
+3) echo Mar;;
+4) echo Apr;;
+5) echo May;;
+6) echo Jnue;;
+7) echo July;;
+8) echo Aug;;
+9) echo Sept;;
+10) echo Oct;;
+11) echo Nov;;
+12) echo Dec;;
+*) echo Enter number from 1 to 12;;
+Esac
+#chmod u+x program2
+# bash program2
+Output:
+Enter month number
+12
+Dec
+
+
+
+
+
+
+18)Write a shell script to print the sum of 1-10 using a for loop.
+#vi program3
+#!/bin/bash
+sum=0
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+sum=`expr $sum + $i`
+echo $i
+done
+echo The sum is $sum
+#chmod u+x program3
+#bash program3
+Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+The sum is 55
+
+
+
+
+19)Write a shell script to display the results of five subjects.
+#vi prog1
+#!/bin/bash
+echo Enter the marks in 5 subjects
+read m1 m2 m3 m4 m5
+per=`expr $m1 + $m2 + $m3 + $m4 + $m5`
+per=`expr $per / 5`
+echo $per
+if [ $per -lt 35 ]
+then
+echo Grade=Fail
+fi
+if [ $per -ge 35 -a $per -lt 45 ]
+then
+echo Grade=Third
+fi
+if [ $per -ge 45 -a $per -lt 60 ]
+then
+echo Grade=Second
+fi
+if [ $per -ge 60 -a $per -lt 75 ]
+then
+echo Grade=First
+fi
+if [ $per -ge 75 ]
+then
+echo Grade=First D
+fi
+#chmod u+x prog1
+#bash prog1
+Output:
+Enter the marks in 5 subjects
+50 60 26 53 75
+52
+Grade=Second
+
+
+
+
+
+20)Write a shell script to check whether the number is positive or negative.
+#vi prog4
+#!/bin/bash
+echo Enter the number
+read a
+if [ $a -lt 0 ]
+then
+echo $a is negative
+elif [ $a -gt 0 ]
+then
+echo $a is positive
+else
+echo $a is positive and negative
+fi
+#chmod u+x prog4
+#bash prog4
+Output:
+Enter the number
+5
+5 is positive
+
+
+
+
+21)Write a shell script to match the pattern.
+#vi prog2
+#!/bin/bash
+echo Enter the word
+read str
+case $str in
+[aeiou]*) echo the word begins with a vowel;;
+[0-9]*) echo the word begins with a digit;;
+*[0-9]) echo the word ends with a digit;;
+????)echo the word entered is 4 lettered word;;
+*) echo the word entered is either starts with a constants or incorrect input;;
+esac
+#chmod u+x prog2
+#bash prog2
+Output:
+Enter the word
+a
+the word begins with a vowel
+
+
+
+
+22)Write a shell script to use the case command.
+#vi prog3
+#!/bin/bash
+echo Enter
+echo 1 To see the contents of /etc/passwd
+echo 2 To see list of users
+echo 3 To see present working directory
+echo 4 exit
+echo enter your choice
+read n
+case $n in
+1) cat/etc/passwd;;
+2) ls /home;;
+3) pwd;;
+4) exit;;
+*) echo Enter the choice as 1,2,3 or 4;;
+esac
+#chmod u+x prog3
+#bash prog3
+Output:
+Enter
+1 To see the contents of /etc/passwd
+2 To see list of users
+3 To see present working directory
+4 exit
+enter your choice
+2
+jerry nobita student sunio tom tyit01 tyit02
+
+
+
+
+23)Write a shell script to print 1-10 numbers using a for loop.(c style for loop)
+#vi prog5
+#!/bin/bash
+for ((i=1;i<=10;i++))
+do
+echo "The next number is $i"
+done
+#chmod u+x prog5
+#bash prog5
+Output:
+The next number is 1
+The next number is 2
+The next number is 3
+The next number is 4
+The next number is 5
+The next number is 6
+The next number is 7
+The next number is 8
+The next number is 9
+The next number is 10
+
+
+
+
+24)Write a shell script to print 1-10 numbers using a for loop using two variables.
+#vi prog6
+#!/bin/bash
+for ((a=1,b=10;a<=10;a++,b--))
+do
+echo "$a - $b"
+Done
+#chmod u+x prog6
+#bash prog6
+Output:
+1 - 10
+2 - 9
+3 - 8
+4 - 7
+5 - 6
+6 - 5
+7 - 4
+8 - 3
+9 - 2
+10 - 1
+
+
+
+
+25)Write a shell script to print 1-10 numbers in reverse using a while loop .
+#vi prog7
+#!/bin/bash
+var1=10
+while [ $var1 -gt 0 ]
+do
+echo $var1
+var1=$[ $var1 - 1 ]
+Done
+#chmod u+x prog7
+#bash prog7
+Output:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+
+
+26)Write a shell script to print summation of n numbers.
+#vi prog8
+#!/bin/bash
+echo Enter number
+read n
+i=1
+sum=0
+while [ $i -le $n ]
+do
+sum=`expr $sum + $i`
+i=`expr $i + 1`
+done
+echo "Summation=$sum"
+#chmod u+x prog8
+#bash prog8
+Output:
+Enter number
+4
+Summation=10
+
+
+
+
+27)Write a shell script to use until command.
+#vi prog9
+#!/bin/bash
+var1=100
+until [ $var1 -eq 0 ]
+do
+echo $var1
+var1=$[ $var1 - 25 ]
+Done
+#chmod u+x prog9
+#bash prog9
+Output:
+100
+75
+50
+25
+
+
+
+
+28)Write a shell script to print 1-10 numbers using a while loop .
+#vi prog10
+#!/bin/bash
+i=1
+sum=0
+while [ $i -le 10 ]
+do
+echo $i
+sum=`expr $sum + $i`
+i=`expr $i + 1`
+done
+echo The sum is: $sum
+#chmod u+x prog10
+#bash prog10
+Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+The sum is: 55
+
+
+
+29)Write a shell script to print 1-10 numbers using until loop .
+#vi prog11
+#!/bin/bash
+i=1
+sum=0
+until [ $i -gt 10 ]
+do
+echo $i
+sum=`expr $sum + $i`
+i=`expr $i + 1`
+done
+echo The sum:$sum
+#chmod u+x prog11
+#bash prog11
+Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+The sum:55
+
+
+
+30)Write a shell script to check whether the number is even or odd.
+#vi prog12
+#!/bin/bash
+echo Enter any number
+read a
+num=`expr $a % 2`
+if [ $num -eq 0 ]
+then
+echo $a is even
+else
+echo $a is odd
+fi
+#chmod u+x prog12
+#bash prog12
+Output:
+Enter any number
+5
+5 is odd
+
+
+
+
+31)Write a shell script to check whether a number is prime or not.
+# vi prog1
+echo Enter any number
+read n
+i=2
+while [ $i -lt $n ]
+do
+if [ `expr $n % $i` -eq 0 ]
+then
+echo $n is not a prime number
+exit
+fi
+i=$[ $i + 1 ]
+done
+echo $n is prime number
+# chmod 777 prog1
+# bash prog1
+Output:
+Enter any number
+5
+5 is prime number
+
+
+
+
+32)Write a shell script to print a table of numbers.
+# vi test1
+echo Enter any number
+read n
+i=1
+while [ $i -le 10 ]
+do
+echo $n*$i= `expr $n \* $i`
+i=$[ $i +1 ]
+done
+# chmod 777 test1
+# bash test1
+Output:
+Enter any number
+5
+5*1= 5
+5*2= 10
+5*3= 15
+5*4= 20
+5*5= 25
+5*6= 30
+5*7= 35
+5*8= 40
+5*9= 45
+5*10= 50
