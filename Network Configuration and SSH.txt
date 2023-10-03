@@ -1,0 +1,21 @@
+1. First Go to VM Settings>Network Adapter and connect the device.
+2. To change Ethernet card name first check the card name using ifconfig .
+3. Edit /etc/sysconfig/grub in vi editor.
+4. Make configuration file /boot/grub2/grub.cfg and reboot the system.
+5. After rebooting,check the Ethernet card and edit the network configuration file.
+6. Restart the network and check the status.
+7. Check the IP address.
+8. Go to VM Settings>Network Adapter and select the Host-only network connection
+SSH:
+● On the server check the openssh package and restart the service and stop the firewall. nd
+Take a login using the client ip address .
+● From the client machine using who command checks the currently logged in user.Close
+the connection from the server.
+SSH key-based authentication:
+1. Check the openssh package and generate the public-private key pair using ssh-keygen.
+You will be prompted for the file in which you want to save the private key.Enter to
+accept the default. Enter a passphrase.
+2.On client machine, create directory .ssh and create one authorized_keys file in this directory.
+3. Copy the public key to the .ssh/authorized_keys on the client machine and take a login of the
+client machine.
+● Enter the correct passphrase .

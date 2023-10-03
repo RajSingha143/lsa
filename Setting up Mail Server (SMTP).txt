@@ -1,0 +1,20 @@
+Practical 13:
+Setting up Mail Server (SMTP)
+Steps:
+1. Check the IP address of server
+2. Check for the postfix package.Open main configuration file main.cf of postfix.
+3. Set line number to a file.
+4. Go to line number 76 .Uncomment the line and put the hostname of the server.
+5. Go to line number 98 .Uncomment the line.
+6. Uncomment line number 113 and comment line 116.
+7. Uncomment line number 264 and write subnet.
+8. Uncomment line number 296.
+9. Uncomment line number 317 and give the IP address of the mail server.
+10. Uncomment line number 419 for mailbox.
+Esc:wq -save and exit.
+11. Restart the service and check the status.
+12. From the root tab ,use the following command to send the mail.
+13. On the other tab login from the recipient account.Go to home directory ->go to
+maildir ->go to new directory.
+● Send another mail with attachment.
+● On the other tab login from the recipient account and check the mail.

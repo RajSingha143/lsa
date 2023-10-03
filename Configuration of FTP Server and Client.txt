@@ -1,0 +1,25 @@
+Practical 9:
+Configuration of FTP Server and Client
+Steps:
+FTP server configuration
+1. Check the ip address of the server machine .
+2. Verify the package vsftpd for FTP. If installed, create a few files in the pub. It is
+shown below.
+3. Edit main configuration file of ftp is vsftpd.conf which is in the /etc/vsftpd directory.
+Save the file and quit. Esc:wq
+4. Restart the service. Stop the firewall.
+5. Disable SeLinux. Give write permission to /var/ftp/pub directory.
+FTP Client configuration:
+1. Check the ip address of your client machine.
+2. Check for the ftp package.
+If not installed then install as follows.
+3. Login with ftp 10.0.0.100 .
+Enter username:ftp and password:ftp
+By default ftp takes login in its root directory.
+First change the directory to pub using cd command.
+Use ls command to view the content of the directory.
+4. In ftp, files get downloaded from /var/ftp/pub and files get uploaded into /var/ftp/pub.
+5. Use the put command to upload files on the server.
+6. To close a connection on ftp use ‘bye’ command.
+7. Open web browser and search ftp 10.0.0.100.It will show the Contents of pub
+directory

@@ -1,0 +1,53 @@
+Practical 4:- Storage Devices(Disk partition , LVM, Swap)
+Steps:-
+● Power off the machine.
+● 1
+st go to the Virtual Machine settings ->Add-> Add Hardware wizard ->Hard disk->
+Next->SCSI-> Next -> Select a disk -> Give the disk size -> Select the option split
+Virtual disk into multiple file -> Next -> Finish -> Ok.
+
+
+● #fdisk -l : used to display information about all the available disk partitions on the system,
+including their sizes, types, and file system details.
+● #fdisk /dev/sdb : used to run the fdisk utility on the "sdb" disk device, allowing the user to
+create, delete, and manage partitions on that specific disk.
+● Enter n command for add a new partition. -> p for select default. -> Enter 1 for partition
+number -> Enter -> Enter last sector of size .
+● Similarly all partitions are done.
+● Enter command p for print the partition table.
+
+● W:- write table to disk and exit.
+● #partprobe /dev/sdb : used to inform the operating system of any changes made to the partition
+table on the "sdb" disk device, without requiring a system reboot, so that the updated partition
+information becomes immediately available.
+● #mkfs.xfs /dev/sdb1 : used to create a new XFS file system on the "sdb1" partition, formatting it
+and making it ready for data storage and retrieval.
+●
+● #mkdir partiton1 : used to create a new directory named "partition1" in the current working
+directory, providing a location to store files and directories within that specific partition or disk
+space.
+● #mount /dev/sdb1 partition1 : used to mount the file system located on the "sdb1" partition to
+the "partition1" directory, making the files and directories in that partition accessible at the
+specified mount point.
+● # df -lh :- displays mounted file systems.
+● Enter t for change a partition’s system id. -> Enter partition numbers -> Type L for all list. -> 82
+● #mkswap /dev/sdb3:- Format it with swap file system.
+● # free -h :- To check current memory usage.
+● #swapon -s :- To check currently active swap partitons
+● # swapon /dev/sdb3:- To activate swap.
+● # swapoff /dev/sdb3:- To deactivate swap.
+
+
+● Enter 8e for changing the type of partition ‘Linux’ to ‘Linux’.
+● #pvcreate /dev/sdc{2,3}:- To create physical volume.
+● #vgcreate /dev/vg1 /dev/sdc{1,2}:- To create volume group.
+● #pvdisplay :- To display physical volume.
+● # vgdisplay:- To display volume group.
+● #lvcreate -L +1G -n /dev/vg/v1 :- To create logical volume.
+● # lvextend -L +1G /dev/vg/v1:- To extend logical volume.
+● #lvreduce -L -600M /dev/vg/v1 :- To reduce logical volume.
+● # lvdisplay :- To display logical volume.
+● # vgextend /dev/vg1 /dev/sdc3:- To extend volume group.
+● # vgreduce /dev/vg /dev/sdc3 :- To reduce volume group.
+● #lvmremove /dev/vg/v1:- To remove logical volume.
+● #vgremove /dev/vg:- To remove volume group.

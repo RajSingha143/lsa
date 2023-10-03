@@ -1,0 +1,11 @@
+Practical 10:
+Configure NFS Server to share directories on your Network,Configure NFS
+Client
+Steps:
+1. Check for nfs-utils package.create two directory to share.
+2. Make entry of shared directory in /etc/exports.
+3. Change the file permission of /alpha directory .Restart the service and check the status.
+4. On the client machine check the nfs-utils package.Check the shared files using showmount
+command. Make a directory and mount the shared file in that directory .Try to edit the files.
+● On the server end check the changes in shared files using ls -l.
+5. Unmount the shared files.

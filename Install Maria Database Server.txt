@@ -1,0 +1,13 @@
+Practical 14:
+Install Maria Database Server
+Steps:
+1. Check for mariadb and mariadb-server packages.Restart the service and check the
+status.
+2. Perform a secure installation of mysql as follows.
+3. Take a login to the root of mysql.
+4. Create a database and table .
+5. Insert values into table.
+6. Exit from database.
+7. Generate a logical backup of the database in /root/lsademo.sql file.
+8. Generate a logical backup of all the databases.
+9. Restore the backup to a local database server

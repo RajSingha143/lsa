@@ -1,0 +1,17 @@
+Practical 11
+Configuration of Samba Servers to share folders or files between Windows and
+Linux.
+Steps:
+1.Check for samba package using rpm -q samba command and make directory to share.
+2.Go to /etc/samba directory and configure smb.conf file.
+3.Create and add samba users in the system.
+4.On windows,go to Network properties>change adapter settings>VMnet1.
+5.In VMnet1 properties select IPv4 and write the ip address as mentioned below.
+6.In VMnet8 properties select IPv4 and write the ip address as mentioned below.
+Now, disable the VMnet1 and VMnet8 and re-enable them.
+7. Restart the service and check the status.
+8.stop firewall and change the shared directory permission recursively.
+9.On windows,press windows+r and type \\10.0.0.100(IP of linux server)
+10.Enter username and password of samba user and check the shared directory
+● Edit the writable directory.
+● Check the changes from server

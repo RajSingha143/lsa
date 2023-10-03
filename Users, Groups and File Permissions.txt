@@ -1,0 +1,21 @@
+#useradd tom :to add new user ….tom is username
+● #adduser jerry:to add new user ….jerry is username
+● #passwd tom:to set or change the password of user tom
+● #passwd -d tom:to delete password of user tom
+● #passwd -l tom:to lock user account tom
+● #passwd -u tom:to unlock user account tom
+  #chfn tom:to add finger information for user jerry
+● #finger tom:to view finger information of user tom
+● #userdel tom:to delete user tom (home directory of user remains in the system)
+● #userdel -r tom:to delete user tom long with his home directory
+● #getent passwd student:to get information of user student
+  #groupadd sales:add a group named sales
+● #id tom:current group assignment of user tom
+● #usermod -g sales tom:assigns sales as a primary group to user tom
+● #usermod -G sales jerry:assigns sales as a for local users GIDs are assigned
+  from500 and onwards secondary group to user jerry
+●
+● #groupdel hr:deletes a group
+● #chmod 755 file1.txt:change permission of file as owner(rwx),group(r-x),other(r-x)
+● #chmod o-x file1.txt:execute permission would be removed from others.
+● #chmod 777 demo:change permission of file as owner(rwx),group(rwx),other(rwx)

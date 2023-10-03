@@ -1,0 +1,13 @@
+Check the IP address of the server machine.
+2. Check for the dhcp package.
+3. Go to the dhcp directory. Open configuration file dhcpd.conf
+4. Restart the dhcpd service and check the status.
+DHCP Client configuration steps:
+1. Check network configuration of server & identify network card.
+2. Edit /etc/sysconfig/network-scripts/ifcfg-ens33 file
+3. Restart network service.
+4. Go to Edit and click change settings.
+5. Click on VMnet1 and make the following changes.
+6. Click on VMnet8 and make the following changes.Click apply and ok.
+7. Go to VM Settings>Network Adapter and check the NAT.
+8. Restart the network and Now ens33 will take the IP address from the dhcp server.

@@ -1,0 +1,117 @@
+tty → to print the file name of the terminal connected to standard input
+pwd → to print name of current/working directory
+cd [directory]→ to change the current/working directory to the specified directory
+cd . → to change to the same directory you are already in
+cd .. → to changes to the previous working directory
+cd ~ → to change the current working directory to the user's home directory
+whoami → to display the username of the currently logged-in user
+who → to display information about users who are currently logged into the system
+hostname → to view or set the hostname of the system
+date → to display or set the system date and time
+date -s "yyyy-mm-dd hh:mm" → to set the system date and time to a specified
+value
+uname -a → to display detailed system information
+uname -r → to display the kernel release information of the operating system
+w → to display information about currently logged-in users and their activities on the
+system
+watch w → to execute w command periodically, showing output fullscreen
+cal → to display the current month's calendar along with today's date highlighted
+cal [year] → to display the calendar for a specified year
+history → to display a list of previously executed commands in the current session
+File Management Commands
+ls → to list directory contents
+ls -l → to list files and directories in a long format
+ls -lh → to list files and directories in the current working directory with
+human-readable file sizes
+ls -a → to list files and directories, including hidden files and directories, in the
+current working directory
+ls -al → to list detailed information about files and directories in the current working
+directory
+ls [directory] → to list the contents of the specified directory
+ls -il → to list the files and directories in the current directory with their inode
+numbers
+mkdir [directory name] → to create a new directory with the specified name in the
+current working directory
+mkdir [directory name 1] [directory name 2] → to create multiple directories with
+the specified names in the current working directory
+mkdir [/path/directory] → to create directory with the specified name in the
+specified path
+mkdir [/directory/{1,2,3}] → to create subdirectories in the specified directory
+touch [filename] → to create a new, empty file
+touch [/path/filename] → to create a new, empty file with the specified name in the
+specified path
+touch [/directory/{1,2,3}] → to create multiple new, empty files in the specified
+directory
+rm [/path/filename] → to delete file with the specified name in the specified path
+rm [/directory/{1,2,3}] → to delete multiple files in the specified directory forcibly
+removes files and directories
+rm -rf [directory]→ to forcibly removes files and directories
+file [filename] → to output the detected file type and some relevant information about
+the file
+cat > [filename] → to create or overwrite the content of a file
+cat [filename] → to display the contents of a file on the terminal
+cat >> [filename] → to append content to a file to display the contents of a text file
+on the terminal
+cp [source] [destination] → to copy files or directories from one location to another
+mv [source] [destination] → to move or rename files and directories
+mv [source] [destination] → to move or rename files and directories
+[command1] | [command2] → to combine multiple commands together to perform
+more complex operations
+cut [filename] → to extract specific columns or fields from lines of text or data files
+date | cut -f [field no.] -d “ ” → to extract a specific range of characters
+grep [pattern] [file] → to search for a specific pattern or string in a given file or set
+of files
+sort [file] → to sort lines of text in a file or from standard input
+sort -r [file] → to sort lines of text in reverse order in a file or from standard input to
+sort the lines of a text file in numerical order
+sort -n [file] → to sort the lines of a text file in numerical order
+sort -nr [file] → to sort the lines of a text file in reverse numerical order
+head [file] → to display the beginning of a text file
+tail [file] → to display the last few lines of a text file
+head [no. of lines] [file] → to display the beginning specified no. of lines of a text file
+tail [no. of lines] [file] → to display the last specified no. of lines of a text file
+tail [file] → to display the last few lines of a text file
+wc [filename] → to display information about the number of lines, words, and
+characters in a file
+wc -l [filename] → to count the number of lines in a file
+wc -w [filename] → to count the number of words in a file
+wc -c [filename] → to count the number of bytes in a file
+wc -m [filename] → to count the number of characters in a file
+wc -L [filename] → to determine the length of the longest line in the file
+[command] < [filename] → to take the content of the specified file as input to the
+command
+ls [directory] [directory] &> [filename] → to list the contents of the directories and
+then redirect both the standard output and standard error to a file
+find [directory] -name [expression] → to search for files and directories within a
+directory based on the specified expression based on a symbolic link's name
+find [directory] -lname [expression] → to search for files and directories within a
+directory based on a symbolic link's name
+find [directory] -size [filesize] → to search for files and directories within a directory
+based on size
+find [directory] -user [username] → to search for files and directories within a
+directory based on which user owns them
+find [directory] -iname [expression] -exec rm -f {} \; → to search for files and
+directories within a directory which start with specified expression and forcefully
+delete them without confirmation
+find [directory] -user [username] -exec rm cp {} [directory] \; → to search for files
+and directories within a directory which a user owns them and copy them to the
+specified directory
+ps → to display information about running processes on the system
+top → to monitor system activity in real-time
+kill [PID] → to terminate or signal processes running on the system using PID
+killall SIGKILL [process name] → to forcefully terminate all running instances of
+the specified process
+killall [process name] → to terminate processes based on their names
+ln -s [source] [destination] → to create symbolic links between files or directories
+ln [source] [destination] → to create hard links between files or directories
+tar -cvf [archive name] [filename] → to create a new archive
+tar -tvf [archive name] → to view the contents of an archive without extracting
+bzip2 [filename] → to compresses the specified file using the bzip2 compression
+
+bunzip2 [filename] → to decompress files that were compressed using the bzip2
+compression algorithm
+gzip [filename] → to compress files using the DEFLATE compression algorithm
+zcat [filename] → to view the contents of compressed files without actually
+extracting them
+gunzip [filename] → to decompress files that have been compressed using the gzip
+compression algorithm

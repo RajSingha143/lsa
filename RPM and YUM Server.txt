@@ -1,0 +1,31 @@
+Practical 3: RPM and YUM Server
+mount /dev/sr0 /mnt command is used to mount /dev/sr0 to /mnt directory.
+rpm -ivh finger* command is used to install package and show useful message during
+installation and (#) to illustrate the progress.
+rpm -q dhcp command is used to query installed dhcp package.
+rpm -q finger command is used to query installed any package.
+rpm -U finger* command is used to upgrade the existing package.
+rpm -e finger command is used to uninstall the package from the system.
+rpm qa command is used to query all installed packages.
+rpm -ql finger command is used to show list of package files installed
+cd Packages command is used to change the current directory to Packages
+mkdir /repo command is used to create a /repo directory.
+cp * /repo command is used to copy all files inside packages directory into /repo.
+rpm -q createrepo command is used to query the createrepo.
+createrepo /repo command is used to create a package repository
+Enter the below data into the /repo.
+vi /etc/yum.repos.d/myrepo.repo command is used to save repository configuration files to
+directory.
+yum repolist command is used to list all enabled repositories.
+yum install dhcp command is used to install dhcp package.
+yum update command is used to update all the currently installed packages.
+yum list installed command is used to list all currently installed packages.
+yum history command is used to check all the commands used with yum in the past.
+yum check-update command is used to check if any update is available for any of the installed
+package.
+yum upgrade dhcp command is used to upgrade the dhcp package.
+yum updateinfo command is used to show all the latest security fixes and bugs fixes available.
+yum remove dhcp command is used to remove dhcp package.
+yum list dhcp command is used to check installed package.
+yum list all command is used list all installed package.
+yum search dhcp command is used to search a dhcp package.
