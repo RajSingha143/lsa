@@ -624,3 +624,26 @@ Enter any number
 5*8= 40
 5*9= 45
 5*10= 50
+
+
+
+
+33)Write a shell script for pattern matching using double bracket
+
+#vi pr1
+
+#!/bin/bash
+
+if [[ $USER ==r*]]
+
+then
+
+echo "Hello $USER" else echo " Sorry, I don't know you"
+
+#chmod 777 pr1
+
+# bash pr1
+
+Output:
+
+Hello root
